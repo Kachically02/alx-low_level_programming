@@ -91,32 +91,6 @@ void check_data_ver(Elf64_Ehdr *header)
 }
 
 /**
- * check_type - function that checks the type of ELF file
- * @header: pointer to the ELF header struct
- * Return: void
- */
-void check_type(Elf64_Ehdr *header)
-{
-	if (header->e_type == ET_EXEC)
-		printf("  Type:                              EXEC (Executable file)\n");
-	if (header->e_type == ET_NONE)
-		printf("  Type:                              Unknown type\n");
-}
-
-/**
- * check_entry - function that checks the type of ELF file
- * @header: pointer to the ELF header struct
- * Return: void
- */
-void check_entry(Elf64_Ehdr *header)
-{
-	if (header->e_entry)
-		printf("  Entry point address:               0x%x\n", (int)header->e_entry);
-	else
-		printf("  Entry point address:               0\n");
-}
-
-/**
  * main - program that prints ELF header formated
  * @argc: number of arguments passed to the program
  * @argv: string containing of the program and the ELF file
